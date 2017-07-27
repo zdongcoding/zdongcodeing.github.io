@@ -81,7 +81,7 @@ deploy:
   repo: git@github.com:zdongcoding/zdongcoding.github.io.git
 
 # 自动生成sitemap
-# sitemap:
-# path: sitemap.xml
-# baidusitemap:
-# path: baidusitemap.xml
+sitemap:
+    path: sitemap.xml
+baidusitemap:
+    path: baidusitemap.xml

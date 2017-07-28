@@ -195,7 +195,11 @@ post_wordcount:
   item_text: true
   wordcount: true
   min2read: true
-  # separated_meta: true
+  separated_meta: false
+
+# 文章末尾添加“本文结束”标记
+passage_end_tag:
+  enabled: true
 
 # Wechat Subscriber
 #wechat_subscriber:

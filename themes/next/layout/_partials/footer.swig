@@ -14,6 +14,7 @@
 <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
   本站访客数:<span id="busuanzi_value_site_uv"></span>
 </span>
+   <div class="powered-by"></div>
   <span id="busuanzi_container_site_pv">
     本站总访问量<span id="busuanzi_value_site_pv"></span>次
   </span>
@@ -29,10 +30,11 @@
   </a>
 </div>
 -->
-{% endif %}
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">共{{ totalcount(site) }}字</span>
+  <span class="post-count">博客共{{ totalcount(site) }}字</span>
 </div>
+{% endif %}
+
 
 

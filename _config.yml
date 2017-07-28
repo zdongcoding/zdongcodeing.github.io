@@ -4,15 +4,15 @@
 
 # Site
 title: zdong_coding
-subtitle: 热爱coding
+subtitle: 热爱  coding
 description:
 author: zoudong
-language: zh-CN
-timezone:
+language: zh-Hans
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://github.com/zdongcoding
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -55,7 +55,7 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
-tag_map:
+tag_map: 
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: jacman
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -80,8 +80,18 @@ deploy:
   type: git
   repo: git@github.com:zdongcoding/zdongcoding.github.io.git
   branch: master
+
+
+Plugins:
+- hexo-generator-feed
+- hexo-generator-sitemap
+# Feed Atom
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
 # 自动生成sitemap
 sitemap:
-    path: sitemap.xml
+  path: sitemap.xml
 baidusitemap:
-    path: baidusitemap.xml
+  path: baidusitemap.xml

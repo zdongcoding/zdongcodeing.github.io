@@ -30,11 +30,12 @@
   </a>
 </div>
 -->
+{% endif %}
+
 <div class="theme-info">
-  <div class="powered-by"></div>
+  <i class="fa fa-coffee"></i>
   <span class="post-count">博客共{{ totalcount(site) }}字</span>
 </div>
-{% endif %}
 
 
 

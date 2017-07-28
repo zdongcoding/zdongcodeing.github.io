@@ -11,7 +11,8 @@ categories: android
   
 ### 1.新建model(Aspectj)
     在model(aspectj)/build.gradle文件中添加
-    如下代码
+
+如下代码
     
 ```java
  import org.aspectj.bridge.IMessage

@@ -90,7 +90,7 @@ scheme: Mist
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
   GitHub: https://github.com/zdong_coding
-  jianshu: http://www.jianshu.com/u/3b568505a1ee
+  简书: http://www.jianshu.com/u/3b568505a1ee
 
 # Social Links Icons
 # Icon Mapping:
@@ -102,7 +102,7 @@ social_icons:
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
-  jianshu: heartbeat
+  简书: heartbeat
   # Twitter: twitter
   # Weibo: weibo
 
@@ -345,6 +345,7 @@ changyan:
 #Share SDK
 sharesdk: true
 shareSDKappkey: 1fc71d7ddb1e4
+
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
 #google_site_verification:

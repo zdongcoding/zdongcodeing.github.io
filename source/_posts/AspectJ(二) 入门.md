@@ -2,6 +2,7 @@
 title: AspectJ(二) 入门
 copyright: true
 tags: AspectJ
+categories: android
 ---
 
 # AspectJ 入门

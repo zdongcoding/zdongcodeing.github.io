@@ -110,7 +110,6 @@
               {% endfor %}
             </span>
           {% endif %}
-
           {% if post.comments %}
             {% if (theme.duoshuo and theme.duoshuo.shortname) or theme.duoshuo_shortname %}
               <span class="post-comments-count">

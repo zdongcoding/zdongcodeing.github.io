@@ -2,6 +2,7 @@
 title: AspectJ(五) 高级语法--Annotation
 copyright: true
 tags: AspectJ
+categories: android
 ---
 # AspectJ 高级语法--Annotation
 

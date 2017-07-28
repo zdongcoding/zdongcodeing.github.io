@@ -3,6 +3,7 @@ title: AspectJ(一) 一些该了解的概念
 date: 2017-07-17
 copyright: true
 tags: AspectJ
+categories: android
 ---
 
 # AspectJ 一些该了解的概念

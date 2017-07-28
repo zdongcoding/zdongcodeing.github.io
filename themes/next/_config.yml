@@ -342,6 +342,9 @@ changyan:
 # Share
 #duoshuo_share: true
 
+#Share SDK
+sharesdk: true
+shareSDKappkey: 1fc71d7ddb1e4
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
 #google_site_verification:

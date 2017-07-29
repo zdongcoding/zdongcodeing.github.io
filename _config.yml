@@ -80,7 +80,7 @@ deploy:
   type: git
   repo:
       github: git@github.com:zdongcoding/zdongcoding.github.io.git,master
-      coding: git@git.coding.net:zd_coding/zd_coding.git,master
+      coding: git@git.coding.net:zd_coding/zd_coding.coding.me.git,master
 # 不能有空格
 
 Plugins:

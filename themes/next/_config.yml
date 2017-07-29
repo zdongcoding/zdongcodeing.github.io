@@ -307,7 +307,7 @@ baidu_analytics: 53d6c2ce781953da76c9cca82d168caf
 # Disqus
 disqus:
   enable: false
-  shortname:
+  shortname: '董志成'
   count: true
 
 # Hypercomments
@@ -325,17 +325,17 @@ changyan:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-#livere_uid: your uid
+livere_uid: MTAyMC8yOTgxNC82Mzgw
 
 # Baidu Share
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-#baidushare:
+#baidushare:true
 ##  type: button
 
 # Share
-#jiathis:
+# jiathis:true
 # Warning: JiaThis does not support https.
 #add_this_id:
 

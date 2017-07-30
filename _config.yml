@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: zdong_coding
+title: zdongの博客
 subtitle: 热爱  coding
 description:
 author: zoudong
@@ -12,8 +12,8 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://github.com/zdongcoding
-root: /
+url: http://www.zdong.top/blog
+root: /blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 

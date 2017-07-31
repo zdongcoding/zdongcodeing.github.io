@@ -1,6 +1,7 @@
 ---
 title: 个人简介
 date: 2017-07-28 10:32:29
+comments: false
 ---
     
 github: https://github.com/zdongcoding

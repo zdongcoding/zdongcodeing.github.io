@@ -14,7 +14,6 @@ timezone: Asia/Shanghai
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://www.zdong.top/blog
 root: /blog/
-# public_dir: public/blog
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -79,7 +78,6 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  root: /blog/
   repo:
       github: git@github.com:zdongcoding/zdongcoding.github.io.git,master
       coding: git@git.coding.net:zd_coding/zd_coding.coding.me.git,master

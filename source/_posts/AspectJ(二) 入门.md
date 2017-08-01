@@ -1,14 +1,10 @@
 ---
-title: AspectJ(二) 入门
+title: AspectJ(二) 入门--配置AspectJ 环境
 copyright: true
 tags: AspectJ
 date: 2017-07-20 14:20:00
 categories: android
 ---
-
-# AspectJ 入门
-
-## android studio  配置AspectJ 环境
   
 ### 1.新建model(Aspectj)
     在model(aspectj)/build.gradle文件中添加

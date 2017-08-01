@@ -8,7 +8,6 @@ tags:
      - retrofit
      - android
 ---
-# AJsoup
     
 [![Platform](https://img.shields.io/badge/platform-Android-yellow.svg)](https://www.android.com)
 [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
@@ -28,11 +27,11 @@ tags:
 <dependency>
   <groupId>com.github.zdongcoding</groupId>
   <artifactId>ajsoup</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
   <type>pom</type>
 </dependency>
 ```
-
+<!-- more -->
 使用方法如下：
 ```
     bean.java
@@ -68,7 +67,7 @@ tags:
 <dependency>
   <groupId>com.github.zdongcoding</groupId>
   <artifactId>converter-ajsoup</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
   <type>pom</type>
 </dependency>
 ```

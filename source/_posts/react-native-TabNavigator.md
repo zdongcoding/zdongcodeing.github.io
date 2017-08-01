@@ -6,8 +6,6 @@ tags: react-native
 categories: react-native
 ---
 
-# react-navigation 之 TabNavigator
-
 > 上文已经说过StackNavigator,这篇文章说说TabNavigator，TabNavigator 与 StackNavigator  用法类似 语法相似
 
 
@@ -31,7 +29,7 @@ categories: react-native
     },
 };
 ```
-
+<!-- more -->
 ### 参数说明
 ```js
 

@@ -7,12 +7,10 @@ categories: android
 ---
 
 
-# AspectJ(四) 高级用法--Field
-
-## Field  <set/get>
+### Field  <set/get>
 > 变量的获取和设置,**不能是局部变量**
 
-### get Field 的值
+#### get Field 的值
 + 想获取一个变量Field的值
 ```java
     MainActivity.java
@@ -49,7 +47,7 @@ public void fieldget4(JoinPoint joinPoint) {
 ```
 通过能收到调用但是无法获取变量值
 
-### set Field 
+#### set Field 
 > 两种情况 1.声明时  2.赋值时
 ```java
 @Pointcut("set(int com.github.zdongcoding.aspectjdemo.MainActivity.base)")
@@ -103,7 +101,7 @@ public MainActivity() {
 - 使用get 使用 around  必须return   否则报错 （applying to join point that doesn't return void: field-get）
 
 
-### 总结
+#### 总结
 * @Around  在get/set 中  set不能使用return  但是get 必须使用return
 * set 中 所有的advice  都不能使用 return
 * advice 除了@Around 其他的都不能return

@@ -7,7 +7,6 @@ categories: android
 ---
 
 
-# bintrayhelper
 update to bintray
 
 > 一键帮助你上次 bintary
@@ -29,6 +28,7 @@ update to bintray
     apply from: 'https://raw.githubusercontent.com/zdongcoding/simplebintray/master/SimpleBintray.gradle'
     //需要终于一点 apply from: 需要放到 ext(项目详细)后面 否则报错
   ```
+<!-- more -->
 # 准备工作
 * projet 中的 build.gradle 文件中加入 
     ```

@@ -5,9 +5,8 @@ tags: AspectJ
 date: 2017-07-26 14:36:00
 categories: android
 ---
-# AspectJ 高级语法--Annotation
 
-## Annotation
+### Annotation
 >这篇文章主讲 ` Annitation ` 作为切入点  
 
 前几篇文章讲的都是通过具体方法路径作为切入点` pointcut `，这次我们通过Annotation来作为切入点` pointcut `
@@ -21,7 +20,7 @@ public @interface Runtime {
 }
 ```
 注解相关知识这里就不多说了[Annotation入门](http://www.jianshu.com/p/fed18201cb12)
-
+<!-- more -->
 来个例子🌰简单说明
 ```java
 @Pointcut("get(@com.github.zdongcoding.aspectjdemo.Runtime * *)")
@@ -69,7 +68,7 @@ public void MethodAspect(JoinPoint joinPoint) throws Throwable {
         Log.e("zoudong", stringBuffer.toString());
 }
 ```
-### JoinPoint
+#### JoinPoint
 ```java
     Object getThis();   //当前切入点类
 

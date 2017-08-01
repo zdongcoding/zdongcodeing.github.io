@@ -6,15 +6,13 @@ tags: react-native
 categories: react-native
 ---
 
-
-# react-navigation 之 StackNavigator
 >  npm install --save react-navigation
 
 > 控件主要分为三种：
    1. StackNavigator ：类似于普通的Navigator，屏幕上方导航栏
    2. TabNavigator：obviously, 相当于iOS里面的TabBarController，屏幕下方标签栏
    3. DrawerNavigator：抽屉效果，左侧滑出这种效果。
-
+<!-- more -->
 ###  StackNavigator
 
 #### 使用方法

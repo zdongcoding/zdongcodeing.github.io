@@ -6,9 +6,8 @@ date: 2017-07-31 15:03:48
 tags: hexo
 ---
 
-# 认识Hexo工程
 
-## 目录结构
+### 目录结构
 ```
  theme  //主题
  scaffolds    //模板
@@ -16,7 +15,8 @@ tags: hexo
  source   //一般是您写的文章资源目录 page
  _config.yml  //hexo 配置文件
 ```
-## theme
+<!-- more -->
+### theme
 > Hexo 的[主题](https://hexo.io/themes/)文件 可以在_config.yml文件中修改
 
 修改主题只需要修改 _config.yml文件中的` theme: xxx `  搜索theme 你就知道了
@@ -28,11 +28,11 @@ tags: hexo
 ```
   hexo new page  tags/categories/about          // 创建各个page
 ```
-## _config.yml
+### _config.yml
 > hexo 的配置文件 语法一般都是 ` key: 后面要有空格 `
 这里不多说网上很多介绍
 
-## 配置Github --->不同部署两个Repository
+### 配置Github --->不同部署两个Repository
   * 建立Repository
 
    建立与你用户名对应的仓库，仓库名必须为`【your_user_name.github.io】`，固定写法 然后建立关联
@@ -58,7 +58,7 @@ deploy:
 ```
 npm install hexo-deployer-git --save
 ```
-## 部署步骤
+### 部署步骤
 每次部署的步骤，可按以下三步来进行。三部曲
 ```
 hexo clean   

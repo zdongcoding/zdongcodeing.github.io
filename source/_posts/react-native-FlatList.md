@@ -6,9 +6,6 @@ tags: react-native
 categories: react-native
 ---
 
-
-# react-native FlatList
-
 ### 使用简介
 
 ```js
@@ -30,6 +27,7 @@ categories: react-native
     }
 />
 ```
+<!-- more -->
 以上代码 一个最简单的FlatList 列表了，
  + 问题一： VirtualizedList: missing keys for items, make sure to specify a key property on each item or provide a custom keyExtractor.
    -  解决办法 : FlatList 加入 

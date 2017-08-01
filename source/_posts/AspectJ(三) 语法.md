@@ -115,7 +115,8 @@ ActivityLifeAspentj.java
 |after()  | after advice  |表示JPoint自己执行完了后，需要干的事情。
 |after():returning(返回值类型)<br>after():throwing(异常类型) | returning和throwing后面都可以指定具体的类型，如果不指定的话则匹配的时候不限定类型  |  假设JPoint是一个函数调用的话，那么函数调用执行完有两种方式退出，一个是正常的return，另外一个是抛异常。注意，after()默认包括returning和throwing两种情况
 | 返回值类型 around()   | before和around是指JPoint执行前或执行后备触发，而around就替代了原JPoint   |around是替代了原JPoint，如果要执行原JPoint的话，需要调用proceed
-## JoinPoint
+
+### JoinPoint
 >在AspectJ的切入点表达式中，我们前面都是使用的execution，实际上，还有一种类型——call，那么这两种语法有什么区别呢
 ####  execution ，call
    + execution(执行) 切入点是` method内部 `

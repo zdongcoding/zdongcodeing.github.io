@@ -7,6 +7,8 @@ tags: hexo
 ---
 > 默认是 landscape 主题 
 
+<!-- more -->
+
 主题的配置，主要在_config.yml
 
 ### _config.yml
@@ -20,7 +22,7 @@ menu:
   about: /about/  
 ```
 以上菜单按钮， 
-<!-- more -->
+
 问题 ：Cannot GET /xxxx/
 
 menu 中每个item 都是一个page ，我们看看` source文件夹中是否有对应名字的文件夹 ` 如果没有的话，我们需要通过如下命令操作

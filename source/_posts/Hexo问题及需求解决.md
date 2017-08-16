@@ -11,7 +11,7 @@ tags: hexo
 答：在文章中加一个` <!--more--> `，` <!--more--> `后面的内容就不会显示出来了。
 #### 个人网址将pages放到子目录下需求
  > * 例如：[www.zdong.top/blog](www.zdong.top/blog)
-
+<!-- more -->
 - 1.修改_config.yml
 
 ```
@@ -23,7 +23,7 @@ tags: hexo
     # Directory
     public_dir: public/blog
 ```
-<!-- more -->
+
 - 2.修改hexo-deployer-git源码
    > 路径 ：/node_modules/hexo-deployer-git/lib/deployer.js
 

@@ -8,7 +8,7 @@ tags: hexo
 
 ### 环境配置
 >[Hexo](https://github.com/hexojs/hexo)是一款基于Node.js的静态博客框架, hexo github或者conding的pages
-
+<!-- more -->
 ### 必须安装
   + npm,[Node](https://nodejs.org/en/)  
   + [Git]()  
@@ -18,7 +18,7 @@ tags: hexo
  ```
     npm install -g hexo   //安装全局hexo
  ```
-<!-- more -->
+
 ### 开始搞事情
 ####  1、创建一个Hexo
 ```

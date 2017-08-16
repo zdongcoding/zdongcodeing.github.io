@@ -5,12 +5,12 @@
 
   .post-title,
   .post-meta {
-    text-align: $site-meta-text-align;
+    text-align: $site-meta-text-align;    // 列表页的title
     +mobile() { text-align: center; }
   }
   .post-eof { display: none; }
 
-  .post { margin-top: 120px; }
+  .post { margin-top: 80px; }  // 列表item 间距
   .post:first-child { margin-top: 0; }
 
   .post-meta {
@@ -43,7 +43,7 @@
 
 .post-button {
   margin-top: 20px;
-  text-align: left;
+  text-align: center;    //阅读按钮
 
   a {
     margin: 0 8px 8px 0 !important;

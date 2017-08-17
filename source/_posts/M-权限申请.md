@@ -38,23 +38,24 @@ public static void requestPermissions(final @NonNull Activity activity,
    // 类似startActivityOnResult 方法  有回调方法
 void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                 @NonNull int[] grantResults)
-``` 
+```
 只要调用了 requestPermissions  它都会回调 ` onRequestPermissionsResult ` 如果` targetSdkVersion<23 `时 调用ActivityCompat.requestPermissions默认也会回调onRequestPermissionsResult  ` permissions.length=0 ,grantResults.length=0 `
-如果` targetSdkVersion>=23 `时**如果允许权限了也还是会回调的**
+如果` targetSdkVersion>=23 `时如果允许权限了也还是会回调的 
 
 ### 3.禁止询问对话框
 ```java
 ActivityCompat.java
  public static boolean shouldShowRequestPermissionRationale(@NonNull Activity activity,@NonNull String permission) {
-        if (Build.VERSION.SDK_INT >= 23) {
-            return ActivityCompatApi23.shouldShowRequestPermissionRationale(activity, permission);
-        }
-        return false;
+    if (Build.VERSION.SDK_INT >= 23) {
+        return ActivityCompatApi23.shouldShowRequestPermissionRationale(activity, permission);
     }
+    return false;
+}
 ```
+
 看上面源码` targetSdkVersion<23 `直接返回 false,` targetSdkVersion>=23 ` 默认false 当用户拒绝并且勾选不再询问返回false ,当用户只拒绝返回 true
 
-####  问题一： ContextCompat.checkSelfPermission 和PermissionChecker.checkSelfPermission 的区别？？？
+####  问题一：ContextCompat和PermissionChecker中的 ` checkSelfPermission `的区别？？？
 区别在于 ` targetSdkVersion<23 `**用户手动去设置中拒绝权限**情况下 ContextCompat.checkSelfPermission 返回的还是PERMISSION_GRANTED，而PermissionChecker.checkSelfPermission 发回PERMISSION_DENIED_APP_OP。
 
 ####  问题二：申请多个权限 多次调用 requestPermissions问题

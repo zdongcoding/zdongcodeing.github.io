@@ -57,6 +57,7 @@ ActivityCompat.java
 ####  问题一： ContextCompat.checkSelfPermission 和PermissionChecker.checkSelfPermission 的区别？？？
 区别在于 ` targetSdkVersion<23 `**用户手动去设置中拒绝权限**情况下 ContextCompat.checkSelfPermission 返回的还是PERMISSION_GRANTED，而PermissionChecker.checkSelfPermission 发回PERMISSION_DENIED_APP_OP。
 
-<!-- ####  问题二：  -->
+####  问题二：申请多个权限 多次调用 requestPermissions问题
+效果肯定不是你想想的！！！ requestPermissions的调用到onRequestPermissionsResult回调这算一个完整的流程，当多次调用requestPermissions在onRequestPermissionsResult回调之前 只处理第一次请求。
 
 

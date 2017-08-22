@@ -27,7 +27,7 @@ public @interface CheckPermission {
 }
 ```
 #### 2.开始切入
-如果你有AspectJ切入的经验或者看过 [Annotation的切入](url) 那看客可以继续往下看了
+如果你有AspectJ切入的经验或者看过 [Annotation的切入][url] 那看客可以继续往下看了
 
 看客们能到这一步，大概应该都知道我们需要Hook到一个方法的是否可以让它执行到，我们应该用` Around `环绕模式来PointCut这个点
 

@@ -31,8 +31,10 @@ PermissionChecker.java
  两个的区别 ？？？？？？ 先卖个关子！（看注释大概就知道区别了）
 
 ### 2.申请权限
-```java
+
 ActivityCompat.java
+
+```java
 public static void requestPermissions(final @NonNull Activity activity,
             final @NonNull String[] permissions, final @IntRange(from = 0) int requestCode) 
    // 类似startActivityOnResult 方法  有回调方法
@@ -43,8 +45,10 @@ void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
 如果` targetSdkVersion>=23 `时如果允许权限了也还是会回调的 
 
 ### 3.禁止询问对话框
-```java
+
 ActivityCompat.java
+
+```java
  public static boolean shouldShowRequestPermissionRationale(@NonNull Activity activity,@NonNull String permission) {
     if (Build.VERSION.SDK_INT >= 23) {
         return ActivityCompatApi23.shouldShowRequestPermissionRationale(activity, permission);

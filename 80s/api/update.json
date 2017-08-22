@@ -1,0 +1,11 @@
+{
+  "code":1,
+  "msg":"系统更新",
+  "data":{
+      "version_code":6,
+      "version_name":"1.5.0",
+      "version_des":"重大升级\n\n在线播放视频功能，收藏和浏览记录",
+      "version_url":"http://zdong.top/80s/apk/app-kuan-release-v1.5.0-6-20170822-150035.apk"
+  }
+ 
+}

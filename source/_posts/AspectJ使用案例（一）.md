@@ -27,7 +27,7 @@ public @interface CheckPermission {
 }
 ```
 #### 2.开始切入
-如果你有AspectJ切入的经验或者看过 [Annotation的切入](http://www.zdong.top/blog/2017/07/26/AspectJ(%E4%BA%94)%20%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95-Annotation/) 那看客可以继续往下看了
+如果你有AspectJ切入的经验或者看过 [Annotation的切入](url) 那看客可以继续往下看了
 
 看客们能到这一步，大概应该都知道我们需要Hook到一个方法的是否可以让它执行到，我们应该用` Around `环绕模式来PointCut这个点
 
@@ -116,5 +116,7 @@ public class CheckPermissionRuntime {
 
     1.因为处理 ` CheckPermissionRuntime `是一个单例 而proceedingJoinPoint会持有activity的对象，所以用不到的时候最好置空，
     2.activity与fragment申请权限的不同方式。
-            
+
+
+   [url]:http://www.zdong.top/blog/2017/07/26/AspectJ(%E4%BA%94)%20%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95-Annotation/       
 

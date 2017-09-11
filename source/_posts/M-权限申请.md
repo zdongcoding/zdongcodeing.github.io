@@ -25,8 +25,10 @@ PermissionChecker.java
     public static final int PERMISSION_DENIED =  PackageManager.PERMISSION_DENIED; // 拒绝
     public static final int PERMISSION_DENIED_APP_OP =  PackageManager.PERMISSION_DENIED  - 1; // 当targetSdkVersion<23时 用户去设置界面关闭权限 返回值
 ```
-第一次安装时，当targetSdkVersion<23时 上面两个方法 ` return  PERMISSION_GRANTED `
-,否则  ` return  PERMISSION_DENIED `
+注意：（2017.9.5修改）
+- 1.当targetSdkVersion<23时 Android 6.0以下手机，默认上面两个方法 ` return  PERMISSION_GRANTED `
+- 2.当targetSdkVersion<23时 Android 6.0或以上手机 用户手动关闭权限 返回 ` return  PERMISSION_DENIED ` 
+
 
  两个的区别 ？？？？？？ 先卖个关子！（看注释大概就知道区别了）
 

@@ -9,14 +9,14 @@ categories: android
 ####  一些概念：
    [依赖注入(Dependency Injection简称DI)](https://baike.baidu.com/item/%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC/1158025?fr=aladdin&fromid=5177233&fromtitle=%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5)
 >组件不做定位查询，只提供普通的Java方法让容器去决定依赖关系。容器全权负责的组件的装配，它会把符合依赖关系的对象通过JavaBean属性或者构造函数传递给需要的对象。通过JavaBean属性注射依赖关系的做法称为设值方法注入(Setter Injection)；将依赖关系作为构造函数参数传入的做法称为构造器注入（Constructor Injection）
-
+<!-- more -->
 <!-- ![举个例子](http://ow9n8vqns.bkt.clouddn.com/timg.jpeg?imageMogr2/thumbnail/!60p) -->
 
 <div align=center><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505997536102&di=048f8891b3d6eb9b649c5decc3d0c0c8&imgtype=0&src=http%3A%2F%2Fpic5.duowan.com%2Fwow%2F0902%2F99573894948%2F99574471488.jpg"  />
 </div>
 
 ####  接入方式：
-<!-- more -->
+
 ```
 compile 'com.google.dagger:dagger:2.11'
 annotationProcessor 'com.google.dagger:dagger-compiler:2.11'

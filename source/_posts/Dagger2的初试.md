@@ -25,7 +25,7 @@ annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
 ####  Dagger2基本语法：
  + @Inject        
    - 用注解(Annotation)来标注目标类中所**依赖的其他类**，同样用注解来标注所**依赖的其他类的构造函数**
- + @Component     
+ + @Component    
    - 将被注解（@Inject）的**其他类**和**其他类的构造函数** 关联起来
 
  以上是Dagger2最基本的配套注解
@@ -60,6 +60,7 @@ interface BComponent{
 
 ####  Module的用途
 > 上面的问题2我们只用@Inject是无法解决这个问题的，那我们怎么弄呢？？我们可以把这些第三方类，无法修改的构造函数的类封装起来，这就是Module
+
  + @Module   
    - 被注解的Module类,其实是一个简单工厂模式，Module里面的方法基本都是创建类实例的方法
 
@@ -75,8 +76,10 @@ interface BComponent{
 那问题又来了， 怎么把Moudle中的各种创建类的实例函数与目标类中用` @Inject `注解标注的依赖产生关联关系呢？接下来我们就要用到` @Provides `
  + @Provides
    - 有了这个注解 Component 就可以在@Module类中搜索被@Provides注解的创建类的实例方法，这样就能解决第三方库使用Dagger的问题了
-##### 注解迷失问题
+
+#### 注解迷失问题
 >` @Provides ` 直接创建类实例方法返回类型是一个接口
+
 解决方式官方已经提供：使用` @Named ` 或者` @Qulifier ` 
  + @Named    直接和` @Provides `配合使用  使用方式  @Named("name“)
  + @Qulifier  和@Named 的去区别是只是创建一个新的注解使用

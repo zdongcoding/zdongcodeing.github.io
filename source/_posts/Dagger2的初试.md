@@ -78,7 +78,7 @@ interface BComponent{
    - 有了这个注解 Component 就可以在@Module类中搜索被@Provides注解的创建类的实例方法，这样就能解决第三方库使用Dagger的问题了
 
 #### 注解迷失问题
->` @Provides ` 直接创建类实例方法返回类型是一个接口
+> ` @Provides ` 直接创建类实例方法返回类型是一个接口
 
 解决方式官方已经提供：使用` @Named ` 或者` @Qulifier ` 
  + @Named    直接和` @Provides `配合使用  使用方式  @Named("name“)

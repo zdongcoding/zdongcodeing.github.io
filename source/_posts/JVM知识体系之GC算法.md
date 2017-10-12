@@ -1,7 +1,7 @@
 ---
 title: JVM知识体系之GC算法
 copyright: true
-categories: android
+categories: [android,java]
 date: 2017-10-11 18:13:48
 tags: JVM
 ---

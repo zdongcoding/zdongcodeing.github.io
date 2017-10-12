@@ -1,7 +1,7 @@
 ---
 title: JVM知识体系之内存结构
 copyright: true
-categories: android
+categories: [android,java]
 date: 2017-10-11 15:37:17
 tags: JVM
 ---

@@ -28,6 +28,7 @@ PermissionChecker.java
 注意：（2017.9.5修改）
 - 1.当targetSdkVersion<23时 Android 6.0以下手机，默认上面两个方法 ` return  PERMISSION_GRANTED `
 - 2.当targetSdkVersion<23时 Android 6.0或以上手机 用户手动关闭权限 返回 ` return  PERMISSION_DENIED ` 
+- 3.当targetSdkVersion<23时 Android 6.0或以上手机 `context.checkSelfPermission ` 都是返回 PERMISSION_GRANTED（context.checkSelfPermission方法失效）
 
 
  两个的区别 ？？？？？？ 先卖个关子！（看注释大概就知道区别了）

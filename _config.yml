@@ -12,7 +12,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.zdong.top/blog
+url: http://blog.zoudongq123.cn
 root: /blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -80,8 +80,8 @@ deploy:
   type: git
   repo:
       github: git@github.com:zdongcoding/zdongcoding.github.io.git,master
-      coding: git@git.coding.net:zd_coding/zd_coding.coding.me.git,master
-  message: blog update
+      # coding: git@git.coding.net:zd_coding/zd_coding.coding.me.git,master
+  message: 新域名
 # 不能有空格
 
 Plugins:

@@ -39,7 +39,7 @@ public  void checkPermission(ProceedingJoinPoint proceedingJoinPoint) {}
 ```
 这样我们大概也就切入了需要申请权限这个点了，接下来我们就来处理 申请权限的具体操作
 
-Android M的Permission我们还需要了解一些基本知识[Android 6.0以上的Permission](http://www.zdong.top/blog/2017/08/16/M-%E6%9D%83%E9%99%90%E7%94%B3%E8%AF%B7/)。
+Android M的Permission我们还需要了解一些基本知识[Android 6.0以上的Permission](http://blog.zoudongq123.cn/2017/08/16/M-%E6%9D%83%E9%99%90%E7%94%B3%E8%AF%B7/)。
 
 接下来我们具体实现 ` checkPermission(ProceedingJoinPoint proceedingJoinPoint)`,话不多说，就是干。
 ```java
@@ -118,5 +118,5 @@ public class CheckPermissionRuntime {
     2.activity与fragment申请权限的不同方式。
 
 
-   [url]:http://www.zdong.top/blog/2017/07/26/AspectJ(%E4%BA%94)%20%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95-Annotation/       
+   [url]:http://blog.zoudongq123.cn/2017/07/26/AspectJ(%E4%BA%94)%20%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95-Annotation/       
 

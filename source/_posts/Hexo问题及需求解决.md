@@ -12,14 +12,14 @@ tags: hexo
 #### 如何让文章想只显示一部分和一个 阅读全文 的按钮？ 
 答：在文章中加一个` <!--more--> `，` <!--more--> `后面的内容就不会显示出来了。
 #### 个人网址将pages放到子目录下需求
- > * 例如：[www.zdong.top/blog](www.zdong.top/blog)
+ > * 例如：[blog.zoudongq123.cn](blog.zoudongq123.cn)
 
 - 1.修改_config.yml
 
 ```
     # URL
     ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-    url: http://www.zdong.top/blog
+    url: http://blog.zoudongq123.cn
     root: /blog/
 
     # Directory

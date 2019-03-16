@@ -1,10 +1,13 @@
 ---
-title: react-native-flexbox布局
+title: ReactNative基础之flexbox布局
 copyright: true
-categories: android
-date: 2018-06-07 14:27:19
 tags: react-native
+categories: react-native
+toc: false
+date: 2018-06-07 14:27:19
 ---
+
+# ReactNative基础之FlexBox
 
 ## 什么是Flexbox布局（“弹性布局”）
 
@@ -24,13 +27,16 @@ tags: react-native
 ```js
 flexDirection: 'column'  //row | column(react-native默认）
 ```
-<center>
-<img src="http://ow9n8vqns.bkt.clouddn.com/flexDirection_column.png" width="40%" height="40%" />
-flexDirection_column
-</center>
 
 <center>
-<img src="http://ow9n8vqns.bkt.clouddn.com/flexDirection_row.png" width="40%" height="40%" />
+<img src="https://ws1.sinaimg.cn/large/882b6a2aly1g14qqag854j20h60eadfu.jpg" width="40%" height="40%" />
+
+flexDirection_column
+</center>
+ 
+<center>
+<img src="https://ws1.sinaimg.cn/large/882b6a2aly1g14qqadbo8j20iu0d2aa2.jpg" width="40%" height="40%" />
+
 flexDirection_row
 </center>
 
@@ -50,17 +56,27 @@ flexDirection_row
 
 `space-between`表示两个**元素之间**的间距 注意对比`space-around`
 
+ 
+ 
+
 <center>
-<img src="http://ow9n8vqns.bkt.clouddn.com/justifyContent_flex_center.png" width="40%" height="40%" />
+<img src="https://ws1.sinaimg.cn/large/882b6a2aly1g14qqangrnj20hw0sowep.jpg" width="40%" height="40%" />
+
 justifyContent_flex_center
-<img src="http://ow9n8vqns.bkt.clouddn.com/justifyContent_flex_end.png" width="40%" height="40%" />
+
+<img src="https://ws1.sinaimg.cn/large/882b6a2aly1g14qqajwddj20iu0tyglv.jpg" width="40%" height="40%" />
+
 justifyContent_flex_end
 
-<img src="http://ow9n8vqns.bkt.clouddn.com/justifyContent_space_between.png" width="40%" height="40%" />
-justifyContent_space_between
+<img src="https://ws1.sinaimg.cn/large/882b6a2aly1g14qqavme6j20gw0qyt8w.jpg" width="40%" height="40%" />
 
-<img src="http://ow9n8vqns.bkt.clouddn.com/justifyContent_space-around.png" width="40%" height="40%" />
+justifyContent_space_between
+ 
+
+<img src="https://ws1.sinaimg.cn/large/882b6a2aly1g14qqas92tj20he0rsq35.jpg" width="40%" height="40%" />
+
 justifyContent_space-around
+
 </center>
  
 
@@ -72,12 +88,17 @@ justifyContent_space-around
 - `center`：伸缩项目向侧轴的中间位置靠齐。
 - `stretch`（默认值）：伸缩项目在` 侧轴方向 `拉伸填充整个伸缩容器。
 注意：这种情况下项目不能设置高度，否则看不到效果。
+ 
+
 
 <center>
-<img src="http://ow9n8vqns.bkt.clouddn.com/alignItems_flex-end.png" width="40%" height="40%" />
+
+<img src="https://ws1.sinaimg.cn/large/882b6a2aly1g14qqa94vxj20h00r2wen.jpg" width="40%" height="40%" />
+
 alignItems_flex-end
 
-<img src="http://ow9n8vqns.bkt.clouddn.com/alignItems_stretch.png" width="40%" height="40%" />
+<img src="https://ws1.sinaimg.cn/large/882b6a2aly1g14qqb6kjvj20h60hymyd.jpg" width="40%" height="40%" />
+
 alignItems_stretch
 </center>
  
@@ -98,8 +119,10 @@ alignItems_stretch
 
 **使用场景：** 伸缩容器中设置了 [**alignItems**](#jump_alignItems) 对齐方式 ，`alignSelf`设置单个伸缩项目单独的对齐方式
 
+
 <center>
-<img src="http://ow9n8vqns.bkt.clouddn.com/alignSeft_flex-end.png" width="40%" height="40%" />
+<img src="https://ws1.sinaimg.cn/large/882b6a2aly1g14qqb12ntj20h00mgt9f.jpg" width="40%" height="40%" />
+
 alignSeft_flex-end
 </center>
 
@@ -107,6 +130,6 @@ alignSeft_flex-end
 -------------
 参考：
 
-[从零学React Native之flexbox布局](https://www.jianshu.com/p/2acddb3731a7)
+官方： [可以在线编写布局直接看效果，但是需要翻墙](https://reactnative.cn/docs/flexbox/)
 
-
+第三方：[从零学React Native之flexbox布局](https://www.jianshu.com/p/2acddb3731a7)

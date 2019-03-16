@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="源码解析," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="zdongの博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="ButterKnife源码分析 基于 ButterKnife 8.8.0版本进行分析  ButterKnife 使用依赖说明1234dependencies &amp;#123;  implementation &amp;apos;com.jakewharton:butterknife:8.8.1&amp;apos;  annotationProcessor &amp;apos;com.jakewharton:butterkni">
+<meta name="keywords" content="源码解析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ButterKnife源码分析">
+<meta property="og:url" content="http://blog.zoudongq123.cn/2018/10/05/ButterKnife源码分析/index.html">
+<meta property="og:site_name" content="zdongの博客">
+<meta property="og:description" content="ButterKnife源码分析 基于 ButterKnife 8.8.0版本进行分析  ButterKnife 使用依赖说明1234dependencies &amp;#123;  implementation &amp;apos;com.jakewharton:butterknife:8.8.1&amp;apos;  annotationProcessor &amp;apos;com.jakewharton:butterkni">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/882b6a2aly1g0h9wcdpzcj20d002c755.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/882b6a2aly1fznagq9al6j20iv0bwt8n.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/882b6a2aly1g0hbw37sx4j214k0j8n0q.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/882b6a2aly1g0hc6tnm3rj21340n4n7y.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/882b6a2aly1g0hcpb81duj20bd0it41b.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/882b6a2aly1g0hd2kvbtsj20ik041q62.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/882b6a2aly1g0hdkrf91gj21mu0bswmk.jpg">
+<meta property="og:updated_time" content="2019-03-16T09:26:29.839Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ButterKnife源码分析">
+<meta name="twitter:description" content="ButterKnife源码分析 基于 ButterKnife 8.8.0版本进行分析  ButterKnife 使用依赖说明1234dependencies &amp;#123;  implementation &amp;apos;com.jakewharton:butterknife:8.8.1&amp;apos;  annotationProcessor &amp;apos;com.jakewharton:butterkni">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/882b6a2aly1g0h9wcdpzcj20d002c755.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.zoudongq123.cn/2018/10/05/ButterKnife源码分析/"/>
+
+
+
+
+
+  <title>ButterKnife源码分析 | zdongの博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?53d6c2ce781953da76c9cca82d168caf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/zdongcoding"> 
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" 
+      alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png">
+      </a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zdongの博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">热爱  coding</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.zoudongq123.cn/2018/10/05/ButterKnife源码分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoudong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zdongの博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ButterKnife源码分析</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-05T10:25:56+08:00">
+                2018-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+          
+            
+          
+
+          
+          
+             <span id="/2018/10/05/ButterKnife源码分析/" class="leancloud_visitors" data-flag-title="ButterKnife源码分析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2,269(字)
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  10min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="ButterKnife源码分析"><a href="#ButterKnife源码分析" class="headerlink" title="ButterKnife源码分析"></a>ButterKnife源码分析</h1><blockquote>
+<p>基于 ButterKnife 8.8.0版本进行分析</p>
+</blockquote>
+<h2 id="ButterKnife-使用"><a href="#ButterKnife-使用" class="headerlink" title="ButterKnife 使用"></a>ButterKnife 使用</h2><h3 id="依赖说明"><a href="#依赖说明" class="headerlink" title="依赖说明"></a>依赖说明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">  implementation &apos;com.jakewharton:butterknife:8.8.1&apos;</span><br><span class="line">  annotationProcessor &apos;com.jakewharton:butterknife-compiler:8.8.1&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line">  <span class="meta">@BindView</span>(R.id.user) EditText username;</span><br><span class="line">  <span class="meta">@BindView</span>(R.id.pass) EditText password;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@BindString</span>(R.string.login_error) String loginErrorMessage;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@OnClick</span>(R.id.submit) <span class="function"><span class="keyword">void</span> <span class="title">submit</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// TODO call server...</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">    setContentView(R.layout.simple_activity);</span><br><span class="line">    ButterKnife.bind(<span class="keyword">this</span>);</span><br><span class="line">    <span class="comment">// TODO Use fields...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="多模块使用"><a href="#多模块使用" class="headerlink" title="多模块使用"></a>多模块使用</h3><blockquote>
+<p>在Library 中使用ButterKnife 以上操作是无法使用的 ，我们还需要借助<code>Butterknife插件</code>来实现功能</p>
+</blockquote>
+<p>在您的<strong>root build.gradle</strong>文件中buildscript:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line">  repositories &#123;</span><br><span class="line">    mavenCentral()</span><br><span class="line">    google()</span><br><span class="line">   &#125;</span><br><span class="line">  dependencies &#123;</span><br><span class="line">    classpath &apos;com.jakewharton:butterknife-gradle-plugin:8.8.1&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="添加插件-apply"><a href="#添加插件-apply" class="headerlink" title="添加插件  apply"></a>添加插件  apply</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;com.android.library&apos;</span><br><span class="line">apply plugin: &apos;com.jakewharton.butterknife&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="插件使用Butterknife"><a href="#插件使用Butterknife" class="headerlink" title="插件使用Butterknife"></a>插件使用Butterknife</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class ExampleActivity extends Activity &#123;</span><br><span class="line">  @BindView(R2.id.user) EditText username;</span><br><span class="line">  @BindView(R2.id.pass) EditText password;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="问题说明"><a href="#问题说明" class="headerlink" title="问题说明"></a>问题说明</h3><ul>
+<li><p>在Library中无法使用在注解中无法使用R的资源</p>
+<blockquote>
+<p> 原因很简单，因为Lib模块中 java注解无法使用变量 然而lib生成的R 文件资源都是 <code>public static</code> 不是 <code>public static final</code>  简单的说lib中生成的R文件不是常量</p>
+</blockquote>
+<p> 编译器将会报错：Attribute value must be constant ，如下图：<br> <img src="https://ws1.sinaimg.cn/large/882b6a2aly1g0h9wcdpzcj20d002c755.jpg" alt=""></p>
+</li>
+</ul>
+<p><a href="http://jakewharton.github.io/butterknife/" target="_blank" rel="noopener">Butterknife 官网简单使用说明</a></p>
+<h2 id="ButterKnife源码分析-1"><a href="#ButterKnife源码分析-1" class="headerlink" title="ButterKnife源码分析"></a>ButterKnife源码分析</h2><h3 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a><a href="https://github.com/JakeWharton/butterknife" target="_blank" rel="noopener">源码地址</a></h3><h3 id="源码module结构"><a href="#源码module结构" class="headerlink" title="源码module结构"></a>源码module结构</h3><h4 id="组件依赖关系"><a href="#组件依赖关系" class="headerlink" title="组件依赖关系"></a>组件依赖关系</h4><blockquote>
+<p>ButterKnife 共7个组件，他们的依赖关系如下图所示 butterknife-integration-test；该项目的测试用例–不做介绍</p>
+</blockquote>
+<p><img src="http://ww1.sinaimg.cn/large/882b6a2aly1fznagq9al6j20iv0bwt8n.jpg" alt=""></p>
+<ul>
+<li>butterknife：这个工程提供了 ButterKnife.bind(this)，这是 ButterKnife 对外提供的门面。也是运行时，触发 Activity 中 View 控件绑定的时机,提供android使用的API。</li>
+<li>butterknife-compiler：java－model 编译期间将使用该工程，他的作用是解析注解，并且生成 Activity 中 View 绑定的 Java 文件。</li>
+<li>butterknife-annotations：java－model 将所有自定义的注解放在此工程下， 确保职责的单一。</li>
+<li>butterknife-gradle-plugin：gradle 插件，这是8.2.0版本起为了支持 library 工程而新增的一个插件工程。</li>
+<li>butterknife-lint：针对 butterknife-gradle-plugin 而做的静态代码检查工具，非常有态度的一种做法，在下文做详细介绍。</li>
+</ul>
+<h3 id="编译-生成Java代码"><a href="#编译-生成Java代码" class="headerlink" title="编译 生成Java代码"></a>编译 生成Java代码</h3><blockquote>
+<p>前提以上基本用法已经加入工程</p>
+</blockquote>
+<h5 id="简单使用-1"><a href="#简单使用-1" class="headerlink" title="简单使用"></a>简单使用</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line">    <span class="meta">@BindView</span>(R.id.btn1)</span><br><span class="line">    Button btn;</span><br><span class="line">    <span class="meta">@BindView</span>(R.id.tv1)</span><br><span class="line">    TextView tv;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@OnClick</span>(R.id.btn1)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">btnClick</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Toast.makeText(<span class="keyword">this</span>, <span class="string">"Butterknfie 简单使用"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Butterknife-之-编译期"><a href="#Butterknife-之-编译期" class="headerlink" title="Butterknife 之 编译期"></a>Butterknife 之 编译期</h4><blockquote>
+<p>android-apt(Annotation Processing Tool) ，在Java代码的编译时期，javac 会调用java注解处理器来生成辅助代码。生成的代码就在 <code>build/generated/source/apt</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity_ViewBinding</span>&lt;<span class="title">T</span> <span class="keyword">extends</span> <span class="title">MainActivity</span>&gt; <span class="keyword">implements</span> <span class="title">Unbinder</span> </span>&#123;</span><br><span class="line">  <span class="keyword">protected</span> T target;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> View view2131427416;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@UiThread</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">MainActivity_ViewBinding</span><span class="params">(<span class="keyword">final</span> T target, View source)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.target = target;</span><br><span class="line"></span><br><span class="line">    View view;</span><br><span class="line">    view = Utils.findRequiredView(source, R.id.btn1, <span class="string">"field 'btn' and method 'btnClick'"</span>);</span><br><span class="line">    <span class="comment">//这里的 target 其实就是我们的 Activity</span></span><br><span class="line">    <span class="comment">//这个castView就是将得到的View转化成具体的子View</span></span><br><span class="line">    target.btn = Utils.castView(view, R.id.btn1, <span class="string">"field 'btn'"</span>, Button.class);</span><br><span class="line">    view2131427416 = view;</span><br><span class="line">    <span class="comment">//为按钮设置点击事件</span></span><br><span class="line">    view.setOnClickListener(<span class="keyword">new</span> DebouncingOnClickListener() &#123;</span><br><span class="line">      <span class="meta">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doClick</span><span class="params">(View p0)</span> </span>&#123;</span><br><span class="line">        target.btnClick();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    target.tv = Utils.findRequiredViewAsType(source, R.id.tv1, <span class="string">"field 'tv'"</span>, TextView.class);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="meta">@CallSuper</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">unbind</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    T target = <span class="keyword">this</span>.target;</span><br><span class="line">    <span class="keyword">if</span> (target == <span class="keyword">null</span>) <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Bindings already cleared."</span>);</span><br><span class="line"></span><br><span class="line">    target.btn = <span class="keyword">null</span>;</span><br><span class="line">    target.tv = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    view2131427416.setOnClickListener(<span class="keyword">null</span>);</span><br><span class="line">    view2131427416 = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.target = <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Utils.findRequiredView 方法的封装</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Utils.findRequiredView</span></span><br><span class="line"> View view = source.findViewById(id);</span><br><span class="line">    <span class="keyword">if</span> (view != <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> view;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Butterknife-之-android-apt-Annotation-Processing-Tool"><a href="#Butterknife-之-android-apt-Annotation-Processing-Tool" class="headerlink" title="Butterknife 之 android-apt(Annotation Processing Tool)"></a>Butterknife 之 android-apt(Annotation Processing Tool)</h3><blockquote>
+<p> APT(Annotation Processing Tool)，即注解处理工具。在该方案中，通常有个必备的三件套，分别是注解处理器 Processor，注册注解处理器 AutoService 和代码生成工具 JavaPoet。</p>
+</blockquote>
+<h4 id="注解处理器-Processor"><a href="#注解处理器-Processor" class="headerlink" title="注解处理器 Processor"></a>注解处理器 Processor</h4><blockquote>
+<p>ButterKnife 一切皆注解，因此首先需要个处理器来解析注解。 ButterKnifeProcessor 充当了该角色，其中 process 方法是触发注解解析的入口，所有的神奇的事情从这里发生。<br>process 方法中主要做两件事情，分别是：</p>
+</blockquote>
+<ul>
+<li>解析所有包含了 ButterKnife 注解的类</li>
+<li>根据解析结果，使用 JavaPoet 生成相应的Java文件<br><img src="https://ws1.sinaimg.cn/large/882b6a2aly1g0hbw37sx4j214k0j8n0q.jpg" alt="ButterKnifeProcessor#process源码"></li>
+</ul>
+<p><code>findAndParseTargets(env)</code> 中解析注解的代码非常冗长，依次对 <code>@BindArray</code> 、<code>@BindColor</code>、<code>@BindString</code>、<code>@BindView</code> 等注解进行解析，解析结果存放在  bindingMap  中。</p>
+<p>这里重点关注下 bindingMap 的键值对。key 值为 TypeElement 对象 ，可以简单的理解为被解析的类本身，而 value 值为 BindingSet 对象，该对象存放了解析结果，根据该结果，JavaPoet 将生成不同的 Java 文件，</p>
+<p>以官方 sample 为例，其映射关系如下：</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+<th>JavaPoet 根据 value 生成的文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SimpleActivity</td>
+<td>BindingSet</td>
+<td>SimpleActivity_ViewBinding.java</td>
+</tr>
+<tr>
+<td>SimpleAdapter</td>
+<td>BindingSet</td>
+<td>SimpleAdapter$ViewHolder_ViewBinding.java</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://ws1.sinaimg.cn/large/882b6a2aly1g0hc6tnm3rj21340n4n7y.jpg" alt=""></p>
+<h4 id="注册注解处理器-AutoService"><a href="#注册注解处理器-AutoService" class="headerlink" title="注册注解处理器 AutoService"></a>注册注解处理器 <a href="https://link.jianshu.com/?t=https://github.com/google/auto/tree/master/service" target="_blank" rel="noopener">AutoService</a></h4><blockquote>
+<p>定义完注解处理器后，还需要告诉编译器该注解处理器的信息，需在 <code>src/main/resource/META-INF/service</code> 目录下增加   <code>javax.annotation.processing.Processor</code> 文件，并将注解处理器的类名配置在该文件中。</p>
+</blockquote>
+<p>整个过程比较繁琐，Google 为我们提供了更便利的工具，叫 <code>AutoService</code>，此时只需要为注解处理器增加 <code>@AutoService</code> 注解就可以了，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AutoService</span>(Processor.class)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">ButterKnifeProcessor</span> <span class="keyword">extends</span> <span class="title">AbstractProcessor</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[注] [AutoService使用的是<code>java.util.ServiceLoader</code>]</p>
+<h4 id="Java编写器-JavaPoet"><a href="#Java编写器-JavaPoet" class="headerlink" title="Java编写器 JavaPoet"></a>Java编写器 <a href="https://github.com/square/javapoet" target="_blank" rel="noopener">JavaPoet</a></h4><blockquote>
+<p>了解 JavaPoet ，最好的方式便是看<a href="https://github.com/square/javapoet" target="_blank" rel="noopener">官方文档</a>。简而言之，当我们写一个类时，其实是有固定结构的，JavaPoet 提供了生成这些结构的 api</p>
+</blockquote>
+<p>举例如下：</p>
+<ul>
+<li><p>类：TypeSpec.classBuilder()</p>
+</li>
+<li><p>构造器：MethodSpec.constructorBuilder()</p>
+</li>
+<li><p>方法：MethodSpec.methodBuilder()</p>
+</li>
+<li><p>参数：ParameterSpec.builder()</p>
+</li>
+<li><p>属性：FieldSpec.builder()</p>
+</li>
+<li><p>程序片段：CodeBlock.builder()</p>
+<p>以 ButterKnife 而言，他做的事情便是将注解处理器解析后的结果（实际上就是上文提到的 BindingSet 对象）生成 Activity_ViewBinding.java，该对象负责绑定 Activity 中的 View 控件以及设置监听器等。</p>
+<p>那么 JavaPoet 是如何处理的？实际上 ButterKnife 会将上文提到的 BindingSet 转换成类似于下文所示的代码：<br>示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建类</span></span><br><span class="line">TypeSpec typeSpec = TypeSpec.classBuilder(<span class="string">"TestActivity_ViewBinding"</span>)</span><br><span class="line">        .addModifiers(PUBLIC) <span class="comment">// 类为public</span></span><br><span class="line">        .addSuperinterface(UNBINDER) <span class="comment">// 类为Unbinder的实现类</span></span><br><span class="line">        .addField(targetField) <span class="comment">// 生成属性 private TestActivity target</span></span><br><span class="line">        .addMethod(constructorForActivity) <span class="comment">// 生成构造器1</span></span><br><span class="line">        .addMethod(otherConstructor) <span class="comment">// 生成构造器2</span></span><br><span class="line">        .addMethod(unBindeMethod) <span class="comment">// 生成unbind()方法</span></span><br><span class="line">        .build();</span><br><span class="line"><span class="comment">// 生成 Java 文件</span></span><br><span class="line">JavaFile javaFile = JavaFile.builder(<span class="string">"com.zdg"</span>, typeSpec)<span class="comment">//包名和类</span></span><br><span class="line">        .addFileComment(<span class="string">"Generated code from Butter Knife. Do not modify!"</span>)</span><br><span class="line">        .build();</span><br><span class="line">javaFile.writeTo(System.out);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>最后总结下这三件套的协作流程，如下图:</p>
+<p><img src="https://ws1.sinaimg.cn/large/882b6a2aly1g0hcpb81duj20bd0it41b.jpg" alt=""></p>
+<h3 id="Butterknife-之-运行期"><a href="#Butterknife-之-运行期" class="headerlink" title="Butterknife 之 运行期"></a>Butterknife 之 运行期</h3><blockquote>
+<p>接下来我们来分析下运行期间发生的事情，相比于编译期间，运行期间的逻辑简单了许多。继续使用上面的Demo例子</p>
+</blockquote>
+<p>运行时的入口在于 <code>ButterKnife.bind(this)</code>，追溯源码发现，最终将会执行以下逻辑：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 最终将找到 SimpleActivity_ViewBinding 的构造器，并实例化</span></span><br><span class="line">Constructor&lt;? extends Unbinder&gt; constructor = findBindingConstructorForClass(targetClass);</span><br><span class="line">constructor.newInstance(target, source);</span><br></pre></td></tr></table></figure></p>
+<p>也就是说 ButterKnife.bind(this) 等价于如下代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">View sourceView = activity.getWindow().getDecorView();</span><br><span class="line"><span class="keyword">new</span> SimpleActivity_ViewBinding(activity,sourceView);</span><br></pre></td></tr></table></figure>
+<p>注：虽然这里使用了反射，但源码中将 <code>Class.forName</code> 的结果缓存起来后再通过 <code>newInstance</code> 创建实例，避免重复加载类，提升性能。</p>
+<p>编译期间和运行期间相辅相成，这便是 android-apt 的普遍套路。</p>
+<h3 id="Library"><a href="#Library" class="headerlink" title="Library"></a>Library</h3><blockquote>
+<p>编译时和运行时的问题解决了，还有最后一个问题：由 R 生成 R2 的意义是什么？</p>
+</blockquote>
+<p>如果你细心的话会发现在官方的 sample-library 中，注解的值均是由 R2 来引用的，如下图：<br><img src="https://ws1.sinaimg.cn/large/882b6a2aly1g0hd2kvbtsj20ik041q62.jpg" alt=""></p>
+<p>如果非 library 工程，则仍然引用系统生成的 R 文件。所以可以猜测：R2 的诞生是为 library 工程量身打造的。</p>
+<p><code>在上面我说过R文件的问题，library中生成的R文件资源文件不是常量 无法使用注解</code></p>
+<p><code>JakeWharton大神</code>他是怎么解决这个问题呢？？？</p>
+<blockquote>
+<p>既然 R 不能满足要求，那就自己构建一个 R2，由 R 复制而来，并且将其属性都修改为 public static final 来修饰的常量。为了让使用者对整个过程无感知，因此使用 gradle 插件来解决这个需求，这也是 <code>butterknife-gradle-plugin</code> 工程的由来。</p>
+</blockquote>
+<h4 id="butterknife-gradle-plugin"><a href="#butterknife-gradle-plugin" class="headerlink" title="butterknife-gradle-plugin"></a>butterknife-gradle-plugin</h4><p><code>butterknife-gradle-plugin</code> 有两个重要的第三方依赖，分别是 <code>javaparser</code> 和 <code>javapoet</code> ，前者用于解析 Java 文件，也就是解析 R 文件，后者用于将解析结果生成 R2 文件。<br>整个插件工程的源码并不难理解，在生成 R2 文件时，要将属性定义成 public static final ，在源码中我们可以看到此逻辑，在 FinalRClassBuilder.addResourceField() 中 ：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FieldSpec.Builder fieldSpecBuilder = FieldSpec.builder(<span class="keyword">int</span>.class, fieldName)</span><br><span class="line">        .addModifiers(PUBLIC, STATIC, FINAL)</span><br><span class="line">        .initializer(fieldValue);</span><br></pre></td></tr></table></figure>
+<p><code>butterknife</code> 插件在 <code>processResources</code> 的 Task 中执行，该任务通常用来完成文件的 copy。</p>
+<p>有关插件的编写 大家可以查看其他插件编写教程</p>
+<h4 id="JakeWharton-给ButterKnife-的情怀和态度——butterknife-lint"><a href="#JakeWharton-给ButterKnife-的情怀和态度——butterknife-lint" class="headerlink" title="JakeWharton 给ButterKnife 的情怀和态度——butterknife-lint"></a>JakeWharton 给ButterKnife 的情怀和态度——butterknife-lint</h4><blockquote>
+<p>一个静态代码检查工具，用来验证非法的 R2 引用。一旦在我们的业务项目里不小心引用了 R2 文件，</p>
+</blockquote>
+<p>当执行 Lint 后，将会有如下图的提示信息：</p>
+<p><img src="https://ws1.sinaimg.cn/large/882b6a2aly1g0hdkrf91gj21mu0bswmk.jpg" alt=""></p>
+<p><a href="https://www.jianshu.com/p/b8b59fb80554" target="_blank" rel="noopener">参考文章</a></p>
+
+      
+      <div>
+        
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+      </div>
+    </div>
+     
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2018/10/05/ButterKnife源码分析/">ButterKnife源码分析</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 zoudong 的个人博客">zoudong</a></p>
+  <p><span>发布时间:</span>2018年10月05日 - 10:10</p>
+  <p><span>最后更新:</span>2019年03月16日 - 17:03</p>
+  <p><span>原始链接:</span><a href="/2018/10/05/ButterKnife源码分析/" title="ButterKnife源码分析">http://blog.zoudongq123.cn/2018/10/05/ButterKnife源码分析/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://blog.zoudongq123.cn/2018/10/05/ButterKnife源码分析/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+    </div>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/源码解析/" rel="tag"><i class="fa fa-tag"></i> 源码解析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/11/Retrofit源码分析/" rel="next" title="Retrofit源码分析">
+                <i class="fa fa-chevron-left"></i> Retrofit源码分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/16/Jetpack之Lifecycle的源码分析/" rel="prev" title="Jetpack之Lifecycle的源码分析">
+                Jetpack之Lifecycle的源码分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!--MOB SHARE BEGIN-->
+<div class="-mob-share-ui-button -mob-share-open">分享</div>
+<div class="-mob-share-ui" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+        <li class="-mob-share-qq"><p>QQ好友</p></li>
+        <li class="-mob-share-renren"><p>人人网</p></li>
+        <li class="-mob-share-kaixin"><p>开心网</p></li>
+        <li class="-mob-share-douban"><p>豆瓣</p></li>
+        <li class="-mob-share-facebook"><p>Facebook</p></li>
+        <li class="-mob-share-twitter"><p>Twitter</p></li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=1fc71d7ddb1e4"></script>
+<!--MOB SHARE END-->            
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTgxNC82Mzgw"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="zoudong" />
+          <p class="site-author-name" itemprop="name">zoudong</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zdong_coding" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/u/3b568505a1ee" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-heartbeat"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ButterKnife源码分析"><span class="nav-number">1.</span> <span class="nav-text">ButterKnife源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ButterKnife-使用"><span class="nav-number">1.1.</span> <span class="nav-text">ButterKnife 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#依赖说明"><span class="nav-number">1.1.1.</span> <span class="nav-text">依赖说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单使用"><span class="nav-number">1.1.2.</span> <span class="nav-text">简单使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多模块使用"><span class="nav-number">1.1.3.</span> <span class="nav-text">多模块使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加插件-apply"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">添加插件  apply</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插件使用Butterknife"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">插件使用Butterknife</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题说明"><span class="nav-number">1.1.4.</span> <span class="nav-text">问题说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ButterKnife源码分析-1"><span class="nav-number">1.2.</span> <span class="nav-text">ButterKnife源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#源码地址"><span class="nav-number">1.2.1.</span> <span class="nav-text">源码地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码module结构"><span class="nav-number">1.2.2.</span> <span class="nav-text">源码module结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#组件依赖关系"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">组件依赖关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译-生成Java代码"><span class="nav-number">1.2.3.</span> <span class="nav-text">编译 生成Java代码</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#简单使用-1"><span class="nav-number">1.2.3.0.1.</span> <span class="nav-text">简单使用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Butterknife-之-编译期"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">Butterknife 之 编译期</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Butterknife-之-android-apt-Annotation-Processing-Tool"><span class="nav-number">1.2.4.</span> <span class="nav-text">Butterknife 之 android-apt(Annotation Processing Tool)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注解处理器-Processor"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">注解处理器 Processor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注册注解处理器-AutoService"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">注册注解处理器 AutoService</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java编写器-JavaPoet"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">Java编写器 JavaPoet</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Butterknife-之-运行期"><span class="nav-number">1.2.5.</span> <span class="nav-text">Butterknife 之 运行期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Library"><span class="nav-number">1.2.6.</span> <span class="nav-text">Library</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#butterknife-gradle-plugin"><span class="nav-number">1.2.6.1.</span> <span class="nav-text">butterknife-gradle-plugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JakeWharton-给ButterKnife-的情怀和态度——butterknife-lint"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">JakeWharton 给ButterKnife 的情怀和态度——butterknife-lint</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoudong</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+   <div class="powered-by"></div>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+</div>
+<!--
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+-->
+
+
+<div class="theme-info">
+  <i class="fa fa-coffee"></i>
+  <span class="post-count">博客共48.6k字</span>
+</div>
+
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("z1uLtPlLYms3CkgzW6sPzBpM-gzGzoHsz", "DYtRdyKALNGI19TW9YzjiWSC");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

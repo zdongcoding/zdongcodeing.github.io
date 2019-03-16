@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/08/20/OkHttp%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90(%E4%B8%89)/</loc>
+    <lastmod>2019-03-16T09:32:54.409Z</lastmod>
+    <data>
+        <display>
+        <title>OkHttp源码分析 Interceptor</title>
+        <pubTime>2018-08-20T02:11:24.000Z</pubTime>
+        
+        <tag>源码解析</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/11/28/LeakCanary%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2019-03-16T09:32:02.156Z</lastmod>
+    <data>
+        <display>
+        <title>LeakCanary源码分析</title>
+        <pubTime>2018-11-28T09:26:41.000Z</pubTime>
+        
+        <tag>源码解析</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/06/06/ReactNative%E5%9F%BA%E7%A1%80%E4%B9%8BState%E5%92%8CProps/</loc>
+    <lastmod>2019-03-16T09:31:04.980Z</lastmod>
+    <data>
+        <display>
+        <title>ReactNative基础之State和Props</title>
+        <pubTime>2018-06-06T06:27:19.000Z</pubTime>
+        
+        <tag>react-native</tag>
+         
+         
+           
+             
+              <breadCrumb title="react-native" url="http://blog.zoudongq123.cn/categories/react-native/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/06/08/ReactNative%E5%9F%BA%E7%A1%80%E4%B9%8BText/</loc>
+    <lastmod>2019-03-16T09:30:49.690Z</lastmod>
+    <data>
+        <display>
+        <title>ReactNative基础之Text</title>
+        <pubTime>2018-06-08T07:40:19.000Z</pubTime>
+        
+        <tag>react-native</tag>
+         
+         
+           
+             
+              <breadCrumb title="react-native" url="http://blog.zoudongq123.cn/categories/react-native/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/10/16/Jetpack%E4%B9%8BLifecycle%E7%9A%84%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2019-03-16T09:28:36.938Z</lastmod>
+    <data>
+        <display>
+        <title>Jetpack之Lifecycle的源码分析</title>
+        <pubTime>2018-10-16T05:29:27.000Z</pubTime>
+        
+        <tag>Jetpack</tag>
+         
+        <tag>源码分析</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/10/05/ButterKnife%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2019-03-16T09:26:29.839Z</lastmod>
+    <data>
+        <display>
+        <title>ButterKnife源码分析</title>
+        <pubTime>2018-10-05T02:25:56.000Z</pubTime>
+        
+        <tag>源码解析</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/09/11/Retrofit%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2019-03-16T09:25:36.598Z</lastmod>
+    <data>
+        <display>
+        <title>Retrofit源码分析</title>
+        <pubTime>2018-09-11T01:25:10.000Z</pubTime>
+        
+        <tag>源码解析</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/08/14/OkHttp%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90(%E4%B8%80)/</loc>
+    <lastmod>2019-03-16T09:24:44.241Z</lastmod>
+    <data>
+        <display>
+        <title>OkHttp源码分析(一)  请求的大致流程</title>
+        <pubTime>2018-08-14T09:15:25.000Z</pubTime>
+        
+        <tag>源码解析</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/08/19/OkHttp%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90(%E4%BA%8C)/</loc>
+    <lastmod>2019-03-16T09:23:48.947Z</lastmod>
+    <data>
+        <display>
+        <title>OkHttp源码分析(二) Dispatcher</title>
+        <pubTime>2018-08-19T05:11:24.000Z</pubTime>
+        
+        <tag>源码解析</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/06/07/ReactNative%E5%9F%BA%E7%A1%80%E4%B9%8BFlexBox/</loc>
+    <lastmod>2019-03-16T09:16:38.085Z</lastmod>
+    <data>
+        <display>
+        <title>ReactNative基础之flexbox布局</title>
+        <pubTime>2018-06-07T06:27:19.000Z</pubTime>
+        
+        <tag>react-native</tag>
+         
+         
+           
+             
+              <breadCrumb title="react-native" url="http://blog.zoudongq123.cn/categories/react-native/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/10/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2019-03-16T07:58:47.505Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式之简单工厂模式</title>
+        <pubTime>2017-10-12T09:06:12.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/10/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2019-03-16T07:58:47.505Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式之建造者模式</title>
+        <pubTime>2017-10-12T09:40:00.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/10/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2019-03-16T07:58:47.505Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式之工厂模式</title>
+        <pubTime>2017-10-12T09:10:12.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/10/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2019-03-16T07:58:47.505Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式之抽象工厂模式</title>
+        <pubTime>2017-10-12T09:20:00.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/05/02/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2019-03-16T07:58:47.504Z</lastmod>
+    <data>
+        <display>
+        <title>基于IJKPlayer视频播放器简单封装设计</title>
+        <pubTime>2018-05-02T02:37:05.000Z</pubTime>
+        
+        <tag>ijkplayer</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/10/12/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2019-03-16T07:58:47.504Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式之单例模式</title>
+        <pubTime>2017-10-12T09:05:51.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/07/05/react-native-TabNavigator/</loc>
+    <lastmod>2019-03-16T07:58:47.504Z</lastmod>
+    <data>
+        <display>
+        <title>react-native TabNavigator</title>
+        <pubTime>2017-07-04T16:00:00.000Z</pubTime>
+        
+        <tag>react-native</tag>
+         
+         
+           
+             
+              <breadCrumb title="react-native" url="http://blog.zoudongq123.cn/categories/react-native/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/07/04/react-native-react_navigation/</loc>
+    <lastmod>2019-03-16T07:58:47.504Z</lastmod>
+    <data>
+        <display>
+        <title>react-native StackNavigator</title>
+        <pubTime>2017-07-03T16:00:00.000Z</pubTime>
+        
+        <tag>react-native</tag>
+         
+         
+           
+             
+              <breadCrumb title="react-native" url="http://blog.zoudongq123.cn/categories/react-native/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/06/21/bintray%20helper/</loc>
+    <lastmod>2019-03-16T07:58:47.503Z</lastmod>
+    <data>
+        <display>
+        <title>上传bintray简单说明</title>
+        <pubTime>2017-06-20T16:00:00.000Z</pubTime>
+        
+        <tag>bintray</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/07/06/react-native-FlatList/</loc>
+    <lastmod>2019-03-16T07:58:47.503Z</lastmod>
+    <data>
+        <display>
+        <title>react-native FlatList</title>
+        <pubTime>2017-07-05T16:00:00.000Z</pubTime>
+        
+        <tag>react-native</tag>
+         
+         
+           
+             
+              <breadCrumb title="react-native" url="http://blog.zoudongq123.cn/categories/react-native/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/01/03/Kotlin%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2019-03-16T07:58:47.502Z</lastmod>
+    <data>
+        <display>
+        <title>Kotlin基础语法</title>
+        <pubTime>2018-01-03T03:35:39.000Z</pubTime>
+        
+        <tag>Kotlin</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/10/11/JVM%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E4%B9%8B%E7%B1%BB%E5%8A%A0%E8%BD%BD/</loc>
+    <lastmod>2019-03-16T07:58:47.502Z</lastmod>
+    <data>
+        <display>
+        <title>JVM知识体系之类加载</title>
+        <pubTime>2017-10-11T03:27:52.000Z</pubTime>
+        
+        <tag>JVM</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+             
+              <breadCrumb title="java" url="http://blog.zoudongq123.cn/categories/android/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/08/16/M-%E6%9D%83%E9%99%90%E7%94%B3%E8%AF%B7/</loc>
+    <lastmod>2019-03-16T07:58:47.502Z</lastmod>
+    <data>
+        <display>
+        <title>Android M-权限基础</title>
+        <pubTime>2017-08-16T03:18:11.000Z</pubTime>
+        
+        <tag>android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/07/31/Hexo%E9%97%AE%E9%A2%98%E5%8F%8A%E9%9C%80%E6%B1%82%E8%A7%A3%E5%86%B3/</loc>
+    <lastmod>2019-03-16T07:58:47.501Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo问题及需求解决</title>
+        <pubTime>2017-07-31T12:50:23.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://blog.zoudongq123.cn/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/10/11/JVM%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E4%B9%8B%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2019-03-16T07:58:47.501Z</lastmod>
+    <data>
+        <display>
+        <title>JVM知识体系之内存结构</title>
+        <pubTime>2017-10-11T07:37:17.000Z</pubTime>
+        
+        <tag>JVM</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+             
+              <breadCrumb title="java" url="http://blog.zoudongq123.cn/categories/android/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/10/11/JVM%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E4%B9%8BGC%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2019-03-16T07:58:47.501Z</lastmod>
+    <data>
+        <display>
+        <title>JVM知识体系之GC算法</title>
+        <pubTime>2017-10-11T10:13:48.000Z</pubTime>
+        
+        <tag>JVM</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+             
+              <breadCrumb title="java" url="http://blog.zoudongq123.cn/categories/android/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/08/18/AspectJ%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+    <lastmod>2019-03-16T07:58:47.500Z</lastmod>
+    <data>
+        <display>
+        <title>Aspectj与androidM的Permission简单结合</title>
+        <pubTime>2017-08-18T03:12:50.000Z</pubTime>
+        
+        <tag>android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/09/21/Dagger2%E7%9A%84%E5%88%9D%E8%AF%95/</loc>
+    <lastmod>2019-03-16T07:58:47.500Z</lastmod>
+    <data>
+        <display>
+        <title>Dagger2的初试</title>
+        <pubTime>2017-09-21T06:40:57.000Z</pubTime>
+        
+        <tag>google</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/07/31/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2(%E4%BA%8C)/</loc>
+    <lastmod>2019-03-16T07:58:47.500Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo搭建个人博客二</title>
+        <pubTime>2017-07-31T07:03:48.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://blog.zoudongq123.cn/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/07/31/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2(%E4%B8%89)/</loc>
+    <lastmod>2019-03-16T07:58:47.500Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo搭建个人博客三</title>
+        <pubTime>2017-07-31T07:44:31.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://blog.zoudongq123.cn/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/07/30/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2(%E4%B8%80)/</loc>
+    <lastmod>2019-03-16T07:58:47.500Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo搭建个人博客(一)</title>
+        <pubTime>2017-07-30T05:10:32.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://blog.zoudongq123.cn/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/07/26/AspectJ(%E5%9B%9B)%20%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95-Field/</loc>
+    <lastmod>2019-03-16T07:58:47.499Z</lastmod>
+    <data>
+        <display>
+        <title>AspectJ(四) 高级用法--Field</title>
+        <pubTime>2017-07-26T06:20:00.000Z</pubTime>
+        
+        <tag>AspectJ</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/07/26/AspectJ(%E4%BA%94)%20%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95-Annotation/</loc>
+    <lastmod>2019-03-16T07:58:47.499Z</lastmod>
+    <data>
+        <display>
+        <title>AspectJ(五) 高级语法--Annotation</title>
+        <pubTime>2017-07-26T06:36:00.000Z</pubTime>
+        
+        <tag>AspectJ</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/07/20/AspectJ(%E4%B8%89)%20%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2019-03-16T07:58:47.499Z</lastmod>
+    <data>
+        <display>
+        <title>AspectJ(三) 语法</title>
+        <pubTime>2017-07-20T02:00:00.000Z</pubTime>
+        
+        <tag>AspectJ</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/07/20/AspectJ(%E4%BA%8C)%20%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2019-03-16T07:58:47.499Z</lastmod>
+    <data>
+        <display>
+        <title>AspectJ(二) 入门--配置AspectJ 环境</title>
+        <pubTime>2017-07-20T06:20:00.000Z</pubTime>
+        
+        <tag>AspectJ</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/03/15/Arch-%E6%9E%B6%E6%9E%84%E7%BB%84%E4%BB%B6%E4%B9%8B-ViewModel/</loc>
+    <lastmod>2019-03-16T07:58:47.498Z</lastmod>
+    <data>
+        <display>
+        <title>Arch 架构组件之 ViewModel</title>
+        <pubTime>2018-03-15T03:08:28.000Z</pubTime>
+        
+        <tag>arch</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/07/17/AspectJ(%E4%B8%80)%20%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2019-03-16T07:58:47.498Z</lastmod>
+    <data>
+        <display>
+        <title>AspectJ(一) 一些该了解的概念</title>
+        <pubTime>2017-07-16T16:00:00.000Z</pubTime>
+        
+        <tag>AspectJ</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2018/04/10/Activtiy%E5%8A%A0%E8%BD%BD%E6%97%B6%E9%97%B4/</loc>
+    <lastmod>2019-03-16T07:58:47.498Z</lastmod>
+    <data>
+        <display>
+        <title>Activtiy加载时间调研</title>
+        <pubTime>2018-04-10T09:22:12.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.zoudongq123.cn/2017/06/21/AJsoup%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2019-03-16T07:58:47.496Z</lastmod>
+    <data>
+        <display>
+        <title>AJsoup使用</title>
+        <pubTime>2017-06-21T02:00:00.000Z</pubTime>
+        
+        <tag>jsoup</tag>
+         
+        <tag>retrofit</tag>
+         
+        <tag>android</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.zoudongq123.cn/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>

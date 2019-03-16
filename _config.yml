@@ -79,7 +79,7 @@ theme: next
 deploy:
   type: git
   repo:
-      github: git@github.com:zdongcoding/zdongcoding.github.io.git,master
+      github: https://github.com/zdongcoding/zdongcoding.github.io.git,master
       # coding: git@git.coding.net:zd_coding/zd_coding.coding.me.git,master
   message: 上传信息
 # 不能有空格
